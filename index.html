@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Seltrix</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Montserrat', sans-serif;
+background:white;
+color:black;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+align-items:center;
+padding:15px 25px;
+border-bottom:1px solid #eee;
+}
+
+.logo{
+font-family:'Cinzel', serif;
+font-size:28px;
+letter-spacing:4px;
+margin-left:15px;
+}
+
+/* HAMBURGER */
+
+.menu-btn{
+width:30px;
+cursor:pointer;
+}
+
+.menu-btn span{
+display:block;
+height:3px;
+background:black;
+margin:6px 0;
+transition:0.4s;
+}
+
+.menu-btn.active span:nth-child(1){
+transform:rotate(45deg) translate(6px,6px);
+}
+
+.menu-btn.active span:nth-child(2){
+opacity:0;
+}
+
+.menu-btn.active span:nth-child(3){
+transform:rotate(-45deg) translate(7px,-7px);
+}
+
+/* SIDEBAR */
+
+.sidebar{
+position:fixed;
+left:-260px;
+top:0;
+width:260px;
+height:100%;
+background:white;
+border-right:1px solid #eee;
+padding-top:80px;
+transition:0.4s;
+}
+
+.sidebar a{
+display:block;
+padding:18px 30px;
+text-decoration:none;
+color:black;
+font-size:18px;
+}
+
+.sidebar a:hover{
+background:#f5f5f5;
+}
+
+/* BANNER */
+
+.banner{
+width:100%;
+height:170px;
+overflow:hidden;
+}
+
+.banner img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* HERO CONTENT */
+
+.hero{
+max-width:800px;
+margin:auto;
+padding:80px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-family:'Cinzel', serif;
+font-size:60px;
+letter-spacing:8px;
+margin-bottom:20px;
+}
+
+.hero h2{
+font-weight:300;
+margin-bottom:40px;
+}
+
+.bio{
+line-height:1.7;
+font-size:18px;
+color:#444;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:40px;
+letter-spacing:5px;
+}
+
+.banner{
+height:200px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar" id="sidebar">
+
+<a href="index.html">Home</a>
+<a href="gallery.html">Gallery</a>
+<a href="order.html">Order</a>
+<a href="offer.html">Offers</a>
+
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="menu-btn" id="menuBtn">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<div class="logo">SELTRIX</div>
+
+</header>
+
+<!-- BANNER IMAGE -->
+
+<div class="banner">
+
+<img src="https://images.pexels.com/photos/3062524/pexels-photo-3062524.jpeg" alt="banner">
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>SELTRIX</h1>
+
+<h2>Luxury in Every Stroke</h2>
+
+<p class="bio">
+
+Seltrix is a luxury art brand focused on creating unique and expressive artwork.
+Every piece is crafted with attention to detail, creativity, and passion.
+From custom drawings to artistic concepts, Seltrix transforms imagination
+into elegant visual experiences.
+
+</p>
+
+</section>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+menuBtn.onclick = function(){
+
+menuBtn.classList.toggle("active");
+
+if(sidebar.style.left === "0px"){
+sidebar.style.left = "-260px";
+}
+else{
+sidebar.style.left = "0px";
+}
+
+}
+
+</script>
+
+</body>
+</html>

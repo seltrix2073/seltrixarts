@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Offers | Seltrix</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Montserrat', sans-serif;
+background:white;
+color:black;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+align-items:center;
+padding:15px 25px;
+background:black;
+color:white;
+}
+
+.logo{
+font-family:'Cinzel', serif;
+font-size:26px;
+letter-spacing:4px;
+margin-left:15px;
+}
+
+/* HAMBURGER */
+
+.menu-btn{
+width:30px;
+cursor:pointer;
+}
+
+.menu-btn span{
+display:block;
+height:3px;
+background:white;
+margin:6px 0;
+transition:0.4s;
+}
+
+.menu-btn.active span:nth-child(1){
+transform:rotate(45deg) translate(6px,6px);
+}
+
+.menu-btn.active span:nth-child(2){
+opacity:0;
+}
+
+.menu-btn.active span:nth-child(3){
+transform:rotate(-45deg) translate(7px,-7px);
+}
+
+/* SIDEBAR */
+
+.sidebar{
+position:fixed;
+left:-260px;
+top:0;
+width:260px;
+height:100%;
+background:white;
+border-right:1px solid #eee;
+padding-top:80px;
+transition:0.4s;
+}
+
+.sidebar a{
+display:block;
+padding:18px 30px;
+text-decoration:none;
+color:black;
+font-size:18px;
+}
+
+.sidebar a:hover{
+background:#f5f5f5;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:80px 20px;
+background:#f8f8f8;
+}
+
+.hero h2{
+font-family:'Cinzel', serif;
+font-size:40px;
+letter-spacing:6px;
+margin-bottom:10px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+line-height:1.6;
+color:#555;
+}
+
+.crafted{
+margin-top:10px;
+font-size:14px;
+color:#777;
+}
+
+/* OFFERS */
+
+.offers{
+max-width:1000px;
+margin:60px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:0 20px;
+}
+
+.offer-card{
+border:1px solid #eee;
+padding:30px;
+text-align:center;
+border-radius:10px;
+transition:0.3s;
+}
+
+.offer-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.offer-card h3{
+font-family:'Cinzel', serif;
+margin-bottom:10px;
+}
+
+/* FORM */
+
+.offer-form{
+max-width:500px;
+margin:50px auto;
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.offer-form input{
+padding:12px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
+}
+
+.offer-form button{
+padding:14px;
+background:black;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:6px;
+transition:0.3s;
+}
+
+.offer-form button:hover{
+background:#333;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:60px;
+padding:20px;
+text-align:center;
+font-size:14px;
+color:#777;
+border-top:1px solid #eee;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar" id="sidebar">
+
+<a href="index.html">Home</a>
+<a href="gallery.html">Gallery</a>
+<a href="order.html">Order</a>
+<a href="offer.html">Offers</a>
+
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="menu-btn" id="menuBtn">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<div class="logo">SELTRIX</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h2>Special Offers</h2>
+
+<p>
+Guess the correct meaning of <strong>SELTRIX</strong> or <strong>2073</strong> to unlock amazing discounts!
+</p>
+
+<div class="crafted">Crafted & Built by Duggu</div>
+
+</section>
+
+<!-- OFFERS -->
+
+<section class="offers">
+
+<div class="offer-card">
+<h3>Guess SELTRIX</h3>
+<p>Get <strong>80% off</strong> your website if correct!</p>
+</div>
+
+<div class="offer-card">
+<h3>Guess 2073</h3>
+<p>Get <strong>90% off</strong> your website if correct!</p>
+</div>
+
+<div class="offer-card">
+<h3>Guess Both</h3>
+<p>Get <strong>100% off</strong> your website if both are correct!</p>
+</div>
+
+</section>
+
+<!-- FORM -->
+
+<form class="offer-form" action="https://formspree.io/f/xlgwpadw" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<input type="text" name="guess1" placeholder="Guess SELTRIX" required>
+
+<input type="text" name="guess2" placeholder="Guess 2073" required>
+
+<button type="submit">Submit Your Guess</button>
+
+</form>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 SELTRIX — Crafted & Built by Duggu
+
+</footer>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+menuBtn.onclick = function(){
+
+menuBtn.classList.toggle("active");
+
+if(sidebar.style.left === "0px"){
+sidebar.style.left = "-260px";
+}
+else{
+sidebar.style.left = "0px";
+}
+
+}
+
+</script>
+
+</body>
+</html>
